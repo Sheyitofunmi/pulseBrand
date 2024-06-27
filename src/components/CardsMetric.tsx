@@ -1,4 +1,3 @@
-// src/components/CardsMetric.tsx
 import React from "react";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 import { useAtom } from "jotai";
@@ -38,9 +37,9 @@ function useConfig() {
 }
 
 export const CardsMetric: React.FC = () => {
-  const [config] = useConfig();
+  const [] = useConfig();
 
-  const primaryColor = "#34D399"; // Set your desired primary color
+  const primaryColor = "#34D399";
 
   return (
     <Card className="sm:col-span-2" x-chunk="dashboard-05-chunk-0">
