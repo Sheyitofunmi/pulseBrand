@@ -42,15 +42,15 @@ const options: ChartOptions<"bar"> = {
       display: false,
     },
     tooltip: {
-      backgroundColor: "#333",
-      titleColor: "#fff",
-      bodyColor: "#fff",
-      borderColor: "#6C63FF",
+      backgroundColor: "#fff",
+      titleColor: "#333",
+      bodyColor: "#333",
+      borderColor: "#D1D5DB",
       borderWidth: 1,
       callbacks: {
         title: () => "",
         label: function (context: TooltipItem<"bar">) {
-          return `Mentions: ${context.raw}`;
+          return `Mention: ${context.raw}`;
         },
       },
       position: "nearest" as "nearest",
@@ -63,6 +63,7 @@ const options: ChartOptions<"bar"> = {
       grid: {
         display: false,
       },
+      stacked: false,
     },
     y: {
       grid: {
@@ -72,35 +73,33 @@ const options: ChartOptions<"bar"> = {
         beginAtZero: true,
         callback: (value: any) => `${value}`,
       } as any,
+      stacked: false,
     },
   },
 };
 
 const generateRandomData = () => {
-  return Array.from({ length: 12 }, () => Math.floor(Math.random() * 100) + 20);
+  return Array.from({ length: 12 }, () => Math.floor(Math.random() * 300) + 50);
 };
 
-const labels = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
 const data: ChartData<"bar"> = {
   labels,
   datasets: [
     {
+      label: "Negative Mentions",
       data: generateRandomData(),
-      backgroundColor: "currentColor",
-      borderColor: "currentColor",
+      backgroundColor: "#D1D5DB",
+      borderColor: "#D1D5DB",
+      borderWidth: 1,
+      borderRadius: 4,
+      barThickness: 20,
+    },
+    {
+      label: "Positive Mentions",
+      data: generateRandomData(),
+      backgroundColor: "#17CF97",
+      borderColor: "#17CF97",
       borderWidth: 1,
       borderRadius: 4,
       barThickness: 20,
@@ -108,18 +107,20 @@ const data: ChartData<"bar"> = {
   ],
 };
 
-// BarChart component
 const BarChartComponent: React.FC = () => {
   return (
-    <div style={{ width: "100%", maxWidth: "800px" }}>
+    <div
+      style={{ width: "100%", maxWidth: "800px" }}
+      className="bg-white rounded-xl p-3  w-full border border-gray-200"
+    >
       <Card className="overflow-hidden">
-        <CardHeader className="flex flex-row items-start ">
+        <CardHeader className="flex flex-row items-start">
           <div className="grid gap-0.5">
-            <CardTitle className="group flex items-center gap-2 ">
-              Social Media Mentions
+            <CardTitle className="group flex items-center gap-2">
+              Engagement Analysis
             </CardTitle>
-            <CardDescription className="">
-              Based on Monitored Keywords
+            <CardDescription className="text-xs pt-2">
+              Based on Recent Data
             </CardDescription>
           </div>
         </CardHeader>
@@ -127,13 +128,13 @@ const BarChartComponent: React.FC = () => {
           <div className="text-[#A3AED0] text-xs mb-4 pb-2">
             Monthly Overview
           </div>
-          <div className="">
+          <div>
             <Bar options={options} data={data} />
           </div>
         </CardContent>
         <CardFooter className="flex flex-row items-center border-t bg-muted/50 px-6 py-3">
           <div className="text-xs text-muted-foreground">
-            Updated <time dateTime="2024-06-27">June 27, 2024</time>
+            Updated <time dateTime="2024-06-30">June 30, 2024</time>
           </div>
         </CardFooter>
       </Card>

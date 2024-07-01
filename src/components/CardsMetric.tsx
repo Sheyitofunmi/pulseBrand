@@ -39,10 +39,11 @@ function useConfig() {
 export const CardsMetric: React.FC = () => {
   const [] = useConfig();
 
-  const primaryColor = "#34D399";
-
   return (
-    <Card className="sm:col-span-2" x-chunk="dashboard-05-chunk-0">
+    <Card
+      className="sm:col-span-2 bg-white rounded-xl "
+      x-chunk="dashboard-05-chunk-0"
+    >
       <CardHeader className="pb-3">
         <CardTitle>Exercise Minutes</CardTitle>
         <CardDescription className="max-w-lg text-balance leading-relaxed">
@@ -93,27 +94,22 @@ export const CardsMetric: React.FC = () => {
               />
               <Line
                 type="monotone"
-                strokeWidth={2}
                 dataKey="average"
+                stroke="#ED6C3C"
+                strokeWidth={2}
                 activeDot={{
                   r: 6,
-                  style: { fill: primaryColor, opacity: 0.25 },
-                }}
-                style={{
-                  stroke: primaryColor,
-                  opacity: 0.25,
+                  style: { fill: "#ED6C3C", opacity: 0.55 },
                 }}
               />
               <Line
                 type="monotone"
                 dataKey="today"
+                stroke="#6EC8F7"
                 strokeWidth={2}
                 activeDot={{
                   r: 8,
-                  style: { fill: primaryColor },
-                }}
-                style={{
-                  stroke: primaryColor,
+                  style: { fill: "#6EC8F7" },
                 }}
               />
             </LineChart>

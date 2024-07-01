@@ -5,11 +5,13 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+    <div className="flex min-h-screen w-full flex-row ">
       <Sidebar />
-      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+      <div className="flex flex-col sm:gap-4 sm:py-4 md:py-0 sm:pl-14 w-full mx-auto px-auto ">
         <Header />
-        <Outlet />
+        <div className="flex-1 py-6 ">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const BreadcrumbComponent: React.FC = () => {
           </BreadcrumbItem>
         ) : (
           <BreadcrumbItem>
-            <BreadcrumbPage>Home</BreadcrumbPage>
+            <BreadcrumbPage className="text-2xl">Dashboard</BreadcrumbPage>
           </BreadcrumbItem>
         )}
 

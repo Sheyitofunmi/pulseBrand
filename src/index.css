@@ -2,75 +2,177 @@
   @tailwind components;
   @tailwind utilities;
 
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
+ html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F1F5F9;
+  font-family: "Roboto", sans-serif;
+}
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
+.App {
+  display: flex;
+  flex-direction: column;
+}
 
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
+header {
+  width: 100%;
+  background-color: #fff !important;
+}
 
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
-
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
-
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
-
-      --radius: 0.5rem;
-    }
-
-    .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
-    }
+@media (min-width: 640px) {
+  header {
+    padding-left: 14rem; 
   }
+}
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 2rem;
   }
+}
+
+ 
+.focus-visible\:ring-2:focus-visible {
+  
+  --tw-ring-shadow: none !important;
+ 
+}
+
+
+
+/* Primary Colors:
+#17CF97
+#51DBB1
+#6EC8F7
+#ED6C3C
+#2B2B2B
+#606060
+Light Green: #00C897
+Dark Green: #00856A
+Light Gray: #F5F5F5
+Dark Gray: #2B2B2B
+Accent Colors:
+
+Light Blue: #3498DB
+Orange: #F39C12
+Red: #E74C3C
+Text Colors:
+
+Primary Text: #2B2B2B (Dark Gray)
+Secondary Text: #7F8C8D (Gray)
+Placeholder Text: #BDC3C7 (Light Gray)
+Background Colors:
+
+Main Background: #F5F5F5 (Light Gray)
+Card Background: #FFFFFF (White)
+Sidebar Background: #00C897 (Light Green)
+Top Bar Background: #FFFFFF (White)
+Border Colors:
+
+Default Border: #E0E0E0 (Very Light Gray)
+Focused Border: #3498DB (Light Blue)
+Fonts
+Primary Font:
+
+Font Family: "Inter", sans-serif
+Font Weight: 300 (Light), 400 (Regular), 500 (Medium), 600 (Semi-Bold)
+Secondary Font:
+
+Font Family: "Roboto", sans-serif
+Font Weight: 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold)
+Font Sizes and Styles
+Title:
+
+Font Size: 24px
+Font Weight: 600
+Color: #2B2B2B
+Subtitle:
+
+Font Size: 18px
+Font Weight: 500
+Color: #7F8C8D
+Body Text:
+
+Font Size: 14px
+Font Weight: 400
+Color: #2B2B2B
+Label Text:
+
+Font Size: 12px
+Font Weight: 400
+Color: #BDC3C7
+Styles
+Buttons:
+
+Primary Button:
+
+Background Color: #00C897 (Light Green)
+Text Color: #FFFFFF (White)
+Border Radius: 4px
+Padding: 10px 20px
+Secondary Button:
+
+Background Color: #F5F5F5 (Light Gray)
+Text Color: #2B2B2B (Dark Gray)
+Border: 1px solid #E0E0E0 (Very Light Gray)
+Border Radius: 4px
+Padding: 10px 20px
+Cards:
+
+Background Color: #FFFFFF (White)
+Box Shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
+Border Radius: 8px
+Padding: 20px
+Margin: 10px
+Charts:
+
+Line Chart:
+
+Line Color: #3498DB (Blue)
+Fill Color: rgba(52, 152, 219, 0.2) (Blue with opacity)
+Axis Color: #BDC3C7 (Light Gray)
+Bar Chart:
+
+Bar Color: #00C897 (Light Green)
+Background Bar Color: #F5F5F5 (Light Gray)
+Axis Color: #BDC3C7 (Light Gray)
+Forms:
+
+Input Fields:
+
+Background Color: #FFFFFF (White)
+Border: 1px solid #E0E0E0 (Very Light Gray)
+Focused Border: 1px solid #3498DB (Blue)
+Border Radius: 4px
+Padding: 10px
+Checkboxes and Radio Buttons:
+
+Color: #00C897 (Light Green)
+Border Radius: 50%
+Sidebar:
+
+Background Color: #00C897 (Light Green)
+Text Color: #FFFFFF (White)
+Active Item Background: #00856A (Dark Green)
+Item Hover Background: rgba(255, 255, 255, 0.1)
+Top Bar:
+
+Background Color: #FFFFFF (White)
+Text Color: #2B2B2B (Dark Gray)
+Icon Color: #3498DB (Light Blue) */

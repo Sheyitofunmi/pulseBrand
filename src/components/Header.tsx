@@ -30,7 +30,7 @@ import { Checkbox } from "./ui/checkbox";
 
 const Header: React.FC = () => {
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+    <header className="sticky top-0 z-30 bg-white w-full border-gray-200 md:py-6 flex h-16 md:h-16 items-center gap-4 border-b   sm:py-5 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon" variant="outline" className="sm:hidden">
@@ -42,9 +42,9 @@ const Header: React.FC = () => {
           <nav className="grid gap-6 text-lg font-medium">
             <NavLink
               to="/"
-              className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+              className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-secondary text-lg font-semibold text-white md:text-base"
             >
-              <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+              <Package2 className="h-5 w-5 transition-all group-hover:scale-110 " />
               <span className="sr-only">Acme Inc</span>
             </NavLink>
             <NavLink
@@ -92,7 +92,12 @@ const Header: React.FC = () => {
 
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline">Monitor</Button>
+          <Button
+            variant="outline"
+            className="bg-[#17CF97] text-[#fff]  rounded-lg hover:bg-white hover:text-[#17cf97] hover:border-2 hover:border-[#17CF97]"
+          >
+            Monitor
+          </Button>
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>

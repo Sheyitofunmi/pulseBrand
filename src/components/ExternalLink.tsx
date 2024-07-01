@@ -21,7 +21,10 @@ const ExternalLink: React.FC = () => {
   ];
 
   return (
-    <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
+    <Card
+      className="overflow-hidden bg-white rounded-xl p-3  w-full border border-gray-200"
+      x-chunk="dashboard-05-chunk-4"
+    >
       <CardHeader className=" ">
         <CardTitle className=" ">External Links</CardTitle>
       </CardHeader>
@@ -37,7 +40,7 @@ const ExternalLink: React.FC = () => {
             placeholder="Enter keyword to monitor"
             className="border border-gray-300 rounded-md p-2 "
           />
-          <Button>Submit</Button>
+          <Button className="text-white rounded-md">Submit</Button>
         </form>
         <ul className="space-y-5">
           {links.map((link) => (
